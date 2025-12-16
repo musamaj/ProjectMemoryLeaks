@@ -15,16 +15,12 @@ final class LeakyViewModel: ObservableObject {
     private var a: ClassA?
     private var b: ClassB?
 
+    /// Optional closure for external hooks; does not capture self by default
     private var notifier: (() -> Void)?
 
     init() {
-        notifier = {
-            self.tickCount += 1
-        }
-
-        manager.onTick = { [unowned self] in
-            self.tickCount += 1
-            self.notifier?()
+        manager.onTick = { [weak self] in
+            self?.handleTick()
         }
     }
 
@@ -33,6 +29,11 @@ final class LeakyViewModel: ObservableObject {
     }
 
     func stopWithoutBreakingCycle() {
+        manager.stop()
+        manager.onTick = nil
+        notifier = nil
+        a = nil
+        b = nil
     }
 
     func createMutualCycle() {
@@ -45,6 +46,11 @@ final class LeakyViewModel: ObservableObject {
     }
 
     func requestDismiss() {
+    }
+
+    private func handleTick() {
+        tickCount += 1
+        notifier?()
     }
 
     deinit {

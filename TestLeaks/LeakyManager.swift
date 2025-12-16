@@ -12,9 +12,14 @@ final class LeakyManager {
     var onTick: (() -> Void)?
 
     func start() {
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-            self.onTick?()
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
+            self?.onTick?()
         }
+    }
+
+    func stop() {
+        timer?.invalidate()
+        timer = nil
     }
 
     deinit {

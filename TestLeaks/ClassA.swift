@@ -6,11 +6,12 @@
 //
 
 final class ClassA {
-    var b: ClassB?
+    weak var b: ClassB?
     deinit { print("ClassA deinit") }
 }
 
 final class ClassB {
-    var a: ClassA?
+    weak var a: ClassA?
     deinit { print("ClassB deinit") }
 }
+
