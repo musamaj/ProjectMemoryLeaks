@@ -47,11 +47,10 @@ https://github.com/user-attachments/assets/d1c36bc5-c6a2-46ea-a8a9-a0680756da31
 ### Prompt 10 — AI to refactor leaked code
 Refactor this code to avoid retain cycles and improve memory safety. Use weak/unowned appropriately and simplify the architecture if needed. Apply the required code changes
 
-<img width="1505" height="847" alt="Screenshot 2025-12-14 at 11 14 23 PM" src="https://github.com/user-attachments/assets/86b67c5b-736b-4801-84c3-88159185580d" />
-<img width="1505" height="847" alt="Screenshot 2025-12-14 at 11 09 25 PM" src="https://github.com/user-attachments/assets/a2e81045-9225-49d8-ae53-1e1a68da1fa5" />
-
 ## No leaks after applying changes
 
+<img width="1505" height="847" alt="Screenshot 2025-12-14 at 11 14 23 PM" src="https://github.com/user-attachments/assets/86b67c5b-736b-4801-84c3-88159185580d" />
+<img width="1505" height="847" alt="Screenshot 2025-12-14 at 11 09 25 PM" src="https://github.com/user-attachments/assets/a2e81045-9225-49d8-ae53-1e1a68da1fa5" />
 <img width="1505" height="847" alt="Screenshot 2025-12-14 at 11 07 59 PM" src="https://github.com/user-attachments/assets/c3cd4358-cc9a-42de-b901-b1555d4f576e" />
 
 
